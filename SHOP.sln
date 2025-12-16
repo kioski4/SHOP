@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SHOP", "SHOP.vcxproj", "{6D212374-F809-442A-BC91-665A1B57C3D7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shop ( Чеканцев Даниил )", "..\Shop ( Чеканцев Даниил )\Shop ( Чеканцев Даниил ).vcxproj", "{E4825B83-8450-482A-8A16-F9A4405A3D5D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,14 +21,6 @@ Global
 		{6D212374-F809-442A-BC91-665A1B57C3D7}.Release|x64.Build.0 = Release|x64
 		{6D212374-F809-442A-BC91-665A1B57C3D7}.Release|x86.ActiveCfg = Release|Win32
 		{6D212374-F809-442A-BC91-665A1B57C3D7}.Release|x86.Build.0 = Release|Win32
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Debug|x64.ActiveCfg = Debug|x64
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Debug|x64.Build.0 = Debug|x64
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Debug|x86.ActiveCfg = Debug|Win32
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Debug|x86.Build.0 = Debug|Win32
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Release|x64.ActiveCfg = Release|x64
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Release|x64.Build.0 = Release|x64
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Release|x86.ActiveCfg = Release|Win32
-		{E4825B83-8450-482A-8A16-F9A4405A3D5D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

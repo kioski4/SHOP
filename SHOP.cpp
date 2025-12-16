@@ -10,6 +10,10 @@ int choice_fruit;
 int choice_veg;
 int choice_tea;
 
+int quantity_fruit;
+int quantity_veg;
+int quantity_tea;
+
 const int fruit_size = 4;
 const int veg_size = 3;
 const int tea_size = 2;
@@ -25,36 +29,41 @@ int fruit_prices[fruit_size] = { 100, 120, 150, 130 }; // яблочный, ап
 int veg_prices[veg_size] = { 80, 90, 85 }; // томатный, луковый, огуречный
 int tea_prices[tea_size] = { 200, 180 }; // чесночный, петрушечный
 
-int fruit_korz[4] = { 0 };
-int veg_korz[3] = { 0 };
-int tea_korz[2] = { 0 };
+int fruit_korz[fruit_size] = { 0 };
+int veg_korz[veg_size] = { 0 };
+int tea_korz[tea_size] = { 0 };
+
+bool firstFruit = false;
+bool firstVeg = false;
+bool firstTea = false;
 
 
-void category_();
+void menu_();
 
 int main()
 {
    
 
     setlocale(LC_ALL, "ru");
-    cout << "=================================================================\n+++++++++++++++++++++++++ Магазин +++++++++++++++++++++++++++++++\n====================== Соки Радосвета ===========================\n                      ";
-    cout << "Приветствуем вас в нашем Магазине самых оригинальных и лучших Чаев и Соков  и тд ................\n";
-    category_();
+    
+    menu_();
 
     
 }
 
-void category_()
+void menu_()
 {
-    while (TRUE)
+    while (true)
     {
-        
-        int category;
-        cout << "Выберите категорию товаров\n 1.Соки Фруктовые\n 2.Соки Овощные \n 3.Чаи\n";
+        system("cls");
+        cout << "=================================================================\n+++++++++++++++++++++++++ Магазин +++++++++++++++++++++++++++++++\n====================== Соки Радосвета ===========================\n                      ";
+        int menu;
+        cout << "\nВыберите категорию товаров\n 1.Соки Фруктовые\n 2.Соки Овощные \n 3.Чаи\n 4.Корзина\n";
         cout << "Введите № категории товара : ";
-        if (cin >> category)
+        if (cin >> menu)
         {
-            if (category == 1)
+            //////fruit
+            if (menu == 1)
             {
 
 
@@ -70,23 +79,33 @@ void category_()
                 cout << "Выберите нужный вам товар: ";
                 cin >> choice_fruit;
 
-                if (choice_fruit > 0 && choice_fruit <= 3) {
-                    int quantity;
+                if (choice_fruit > 0 && choice_fruit <= 3) 
+                {
+                    
                     cout << "Сколько литров? ";
-                    cin >> quantity;
-                    fruit_korz[choice_fruit - 1] += quantity;
-                    cout << "Добавлено!\n";
+                    cin >> quantity_fruit;
 
+                    fruit_korz[choice_fruit - 1];
+                    
+                    cout << "Добавлено!\n";
+                    firstFruit = true;
+                    
                 }
 
+                if (choice_fruit == 0)
+                {
+                    system("cls");
+                    continue;
 
-
-
-
+                }
+                else
+                {
+                    cout << " Вы ввели неверный номер товара\n";
+                }
 
             }
-
-            if (category == 2)
+            //////veg
+            if (menu == 2)
             {
 
 
@@ -101,10 +120,29 @@ void category_()
                 cout << "Выберите нужный вам товар: ";
                 cin >> choice_veg;
 
+                if (choice_veg > 0 && choice_veg <= 3) {
+                    
+                    cout << "Сколько литров? ";
+                    cin >> quantity_veg;
+                    veg_korz[choice_veg - 1] += quantity_veg;
+                    cout << "Добавлено!\n";
+                    firstVeg = true;
+                }
+
+                if (choice_veg == 0)
+                {
+                    system("cls");
+                    continue;
+
+                }
+                else
+                {
+                    cout << " Вы ввели неверный номер товара\n";
+                }
             }
 
-
-            if (category == 3)
+            //////tea
+            if (menu == 3)
             {
 
 
@@ -118,6 +156,16 @@ void category_()
                 cout << "0.Назад\n";
                 cout << "Выберите нужный вам товар: ";
                 cin >> choice_tea;
+
+                if (choice_tea > 0 && choice_tea <= 3) {
+                   
+                    cout << "Сколько литров? ";
+                    cin >> quantity_tea;
+                    tea_korz[choice_tea - 1] += quantity_tea;
+                    cout << "Добавлено!\n";
+                    firstTea = true;
+                }
+
                 if (choice_tea == 0)
                 {
                     system("cls");
@@ -129,17 +177,84 @@ void category_()
                     cout << " Вы ввели неверный номер товара\n";
                 }
             }
-           
+/////////////////////////////////////////////////////////////////////////////////////
 
-            if (category == 0)
+            if (menu == 4)
+            {
+                if (firstFruit == false, firstVeg == false, firstTea = false)
+                {
+                
+                
+                    system("cls");
+                    cout << "\nВаша корзина пуста\n\n";
+                    Sleep(2500);
+                    continue;
+                }
+                else
+                {
+                    if (firstFruit == false)
+                    {
+
+                    }
+                    else
+                    {
+                        for (int i = 0; i < fruit_size; i++)
+                        {
+                            if (fruit_korz[i] > 0)
+                            {
+                                cout << fruit_names[fruit_korz[i]];
+                            }
+                        }
+                    }
+
+                    if (firstVeg == false)
+                    {
+
+                    }
+                    else
+                    {
+                        for (int i = 0; i < veg_size; i++)
+                        {
+                            if (veg_korz[i] > 0)
+                            {
+                                cout << veg_korz[i];
+                            }
+
+                        }
+                    }
+                    if (firstTea == false)
+                    {
+
+                    }
+                    else
+                    {
+                        for (int i = 0; i < tea_size; i++)
+                        {
+                            if (tea_korz[i] > 0)
+                            {
+                                cout << tea_names[tea_korz[i]];
+                            }
+                        }
+                    }
+                }
+                
+                
+
+            }
+
+            if (menu == 0)
             {
                 system("cls");
-                cout << "Ошибка: Такого номера категории не существует \n";
+                cout << "\n\nОшибка: Такого номера категории не существует \n";
                 
             }
 
         }
+
         
+        
+        Sleep(4000);
+        continue;
     }
 }
 
